@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Brain Tumour Detection</title>
+</head>
+<body>
+    <h1 class="text-center">Brain Tumour Detection</h1>
+
+    <form class="p-3 text-center" action="/", method="POST" enctype="multipart/form-data">
+        <input class= "form-control" type="file" name = "imagefile" >
+        <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+    </form>
+
+    {% if prediction %}
+{#        <img src="{{url_for('static', filename= image_name)}}">#}
+        <p class="text-center"> {{ prediction }}</p>
+    {% endif %}
+
+
+</body>
+</html>
